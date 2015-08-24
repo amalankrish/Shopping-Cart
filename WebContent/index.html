@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link href="images/icon.ico" rel="shortcut icon">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="content/styles.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css_login/style-login.css">
+<link rel="stylesheet" href="css_login/reset.css">
+<link rel='stylesheet prefetch' href='css_login/animate.css'>
+
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="js/myscripts.js"></script>
+<script type="text/javascript" src="js/date_time.js"></script>
+
+<script type="text/javascript">
+	var attempt = 3;
+
+	function validate() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		if (username == 'abc' && password == "123") {
+			alert("Login successfully");
+			window.location = "Search.html";
+			return false;
+		} else {
+			attempt--;
+
+			alert("Invalid Session!\nYou have left " + attempt + " attempt.");
+
+			if (attempt == 0) {
+				document.getElementById("username").disabled = true;
+				document.getElementById("password").disabled = true;
+				document.getElementById("submit").disabled = true;
+				return false;
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body>
+
+	<!-- ========================== Main Body ======================== -->
+	<div align="center">
+		<div id="header">
+			<div class="container">
+				<a target="_blank" href="">
+					<div class=""></div>
+				</a>
+				<div class="dt">
+					<span id="date_time"></span>
+					<script type="text/javascript">
+						window.onload = date_time('date_time');
+					</script>
+				</div>
+			</div>
+			<!-- end of container -->
+		</div>
+		<!-- end of header -->
+
+		<div id='cssmenu'>
+			<div class="container">
+				<ul>
+				</ul>
+			</div>
+		</div>
+
+
+		<!-- <form name="form1" id="form1" action="result.jsp" method="post" > -->
+
+		<div class='form aniamted bounceIn'>
+			<div class='switch'>
+				<i class='times'></i>
+				<div class='tooltip' id="tooltip">Click Me to register</div>
+			</div>
+
+			<div class='login'>
+				<h2>Login To Your Account</h2>
+
+				<form method="post" name="myform">
+					<input placeholder='Username' type='text' name="user" id="username">
+					<input placeholder='Password' type='password' name="pass"
+						id="password"> <input type="button" value="Login"
+						id="submit" onclick="validate()" />
+
+				</form>
+			</div>
+
+
+
+			<div class='register'>
+				<h2>Create An Account</h2>
+				<div class='alert'>
+					<div class='fa fa-times-circle'></div>
+					There seems to be an issue.
+				</div>
+				<form>
+					<input placeholder='Username' type='text'> <input
+						placeholder='Password' type='password'> <input
+						placeholder='Confirm Password' type='password'> <input
+						placeholder='Email Address' type='email'> <input
+						placeholder='Birth Date (mm/dd/yy)' type='text'> <input
+						type="button" value="Login" id="submit" onclick="validate()" />
+				</form>
+			</div>
+			<footer>
+				<a href=''>Forgot Password?</a>
+
+			</footer>
+
+		</div>
+		<!-- </form> -->
+	</div>
+
+
+	<script src="js/index.js"></script>
+
+	<!--  =========================== Footer ==================================== -->
+	<!-- Footer -->
+	<div id="footers">
+		<div class="container">
+			<div class="footer_nav">
+				<span>&copy; 2015 <a href=""> </a></span>
+			</div>
+			<div class="footer_nav _center"></div>
+
+		</div>
+	</div>
+	<!-- end of Footer -->
+
+
+
+</body>
+
+</html>

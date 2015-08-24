@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shoppingbox: Online Shopping</title>
+<meta charset="utf-8">
+<link href="images/icon.ico" rel="shortcut icon">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css-style/autocompletestyle.css">
+<link rel="stylesheet" href="ism/css/my-slider.css" />
+<link rel="stylesheet" href="css/button.css">
+
+<script src="js-scripts/jquery-1.10.2.js"></script>
+<script src="js-scripts/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="js/myscripts.js"></script>
+<script type="text/javascript" src="js/date_time.js"></script>
+
+<script src="ism/js/ism-2.0.1-min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		var availableTags = [ "Men", "Women", "Kids", "Grocery", ];
+		$("#tags").autocomplete({
+			source : availableTags
+		});
+	});
+
+	function testResults(form) {
+		if (form.codebox1.value == "Men") {
+			window.location = 'Men.html';
+		} else if (form.codebox1.value == "Women") {
+			window.location = 'Women.html';
+		} else if (form.codebox1.value == "Kids") {
+			window.location = 'kids.html';
+		} else if (form.codebox1.value == "Grocery") {
+			window.location = 'Grocery.html';
+		} else {
+			window.alert("Try again!");
+		}
+	};
+</script>
+</head>
+<body>
+	<!-- ========================== Main Body ======================== -->
+	<div align="center">
+		<div id="header">
+			<div class="container">
+				<a target="_blank" href="">
+					<div class=""></div>
+				</a>
+
+				<div class="dt">
+					<span id="date_time"></span>
+					<script type="text/javascript">
+						window.onload = date_time('date_time');
+					</script>
+				</div>
+			</div>
+			<!-- end of container -->
+		</div>
+		<!-- end of header -->
+
+		<div id='cssmenu'>
+			<div class="container">
+				<ul>
+				</ul>
+			</div>
+		</div>
+		<div id="logo">
+			<form action="">
+				<table>
+					<tr>
+
+						<label>Please select category: </label>
+
+					</tr>
+					<tr>
+						<td><label><input type="hidden" name="pickup_ampm">
+								Men</label> <label><input type="hidden" name="pickup_ampm">|
+								Women</label> <label><input type="hidden" name="pickup_ampm">|
+								Kids</label> <label><input type="hidden" name="pickup_ampm">|
+								Grocery</label></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<div id="search">
+
+			<form name="form1" id="form1" method="get">
+				<table>
+					<tr>
+						<td><div class="ui-widget">
+								<div id="speechinput">
+									<input type="text" name="codebox1" id="tags" class="search"
+										value="Search here"
+										onFocus="if(this.value == 'Search here') {this.value = '';this.style.color='black';}">
+								</div>
+							</div></td>
+						<td>&nbsp;&nbsp;<input type="button" name="submit_btn"
+							class="button" value="Search" id="submit_btn"
+							onClick="testResults(this.form)"></td>
+
+					</tr>
+				</table>
+
+			</form>
+			<br></br>
+			<div class='container'>
+
+				<div class="ism-slider">
+					<ol>
+						<li><img src="ism/image/slides/flower-729514_1280.jpg">
+						</li>
+						<li><img src="ism/image/slides/beautiful-701678_1280.jpg">
+						</li>
+						<li><img src="ism/image/slides/summer-192179_1280.jpg">
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+
+		<!-- end of search -->
+
+		<!--  =========================== Footer ==================================== -->
+		<!-- Footer -->
+		<div id="footers">
+			<div class="container">
+				<div class="footer_nav">
+					<span>&copy; 2015 <a href=""> </a></span>
+				</div>
+				<div class="footer_nav _center"></div>
+
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- end of Footer -->
+</body>
+</html>
